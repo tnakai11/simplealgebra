@@ -13,11 +13,14 @@ import interfaces.Monoid
  *    combine(a, identity()) == a
  *    combine(identity(), a) == a
  */
-class IntAdditionMonoid : Monoid<Int> {
+class NonNegativeIntAdditionMonoid : Monoid<Int> {
     override fun identity(): Int = 0
 
     override fun combine(
         a: Int,
         b: Int,
-    ): Int = a + b
+    ): Int {
+        require(a >= 0 && b >= 0) { "This monoid only accepts non-negative integers" }
+        return a + b
+    }
 }
