@@ -21,10 +21,24 @@ import interfaces.Semigroup
  * @param T the type of the first element in the pair
  * @param U the type of the second element in the pair
  */
-class RectangularBand<T, U>: Semigroup<Pair<T, U>> {
+class RectangularBand<T, U> : Semigroup<Pair<T, U>> {
     override fun combine(a: Pair<T, U>, b: Pair<T, U>): Pair<T, U> {
         val first = LeftZeroBand<T>().combine(a.first, b.first)
         val second = RightZeroBand<U>().combine(a.second, b.second)
         return first to second
+    }
+
+    @Suppress("UNCHECKED_CAST")
+    override fun combine(vararg elements: Pair<T, U>): Pair<T, U> {
+        val size = elements.size
+
+        val x = arrayOfNulls<Any>(size) as Array<T>
+        val y = arrayOfNulls<Any>(size) as Array<U>
+        for (i in elements.indices) {
+            x[i] = elements[i].first
+            y[i] = elements[i].second
+        }
+
+        return LeftZeroBand<T>().combine(*x) to RightZeroBand<U>().combine(*y)
     }
 }

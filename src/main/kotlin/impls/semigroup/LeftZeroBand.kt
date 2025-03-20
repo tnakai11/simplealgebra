@@ -22,4 +22,8 @@ class LeftZeroBand<T> : Semigroup<T> {
     override fun combine(a: T, b: T): T {
         return a
     }
+
+    override fun combine(vararg elements: T): T {
+        return elements.first()
+    }
 }
