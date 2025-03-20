@@ -1,15 +1,11 @@
 .gradle
 build/
+!gradle/wrapper/
 !gradle/wrapper/gradle-wrapper.jar
+
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-# Gradle-specific files
-/.gradle/
-/gradle/
-/.gradle/
-/*.gradle.kts.lock
-gradle-app.setting
 
 ### IntelliJ IDEA ###
 .idea/
