@@ -18,4 +18,19 @@ interface Semigroup<T> {
      * @return the result of combining the two elements
      */
     fun combine(a: T, b: T): T
+
+    /**
+     * Combines a variable number of elements of type T into a single element
+     * using the associative binary operation defined by the implementation.
+     *
+     * @param elements the elements to be combined
+     * @return the result of combining all the input elements
+     */
+    fun combine(vararg elements: T): T {
+        var result = elements[0]
+        for (i in 1 until elements.size) {
+            result = combine(result, elements[i])
+        }
+        return result
+    }
 }

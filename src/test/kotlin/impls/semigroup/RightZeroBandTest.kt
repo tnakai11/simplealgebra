@@ -64,4 +64,19 @@ class RightZeroBandTest {
         // Assert
         assertEquals(c, result)
     }
+
+    @Test
+    fun multipleCombine2() {
+        // Arrange
+        val target = RightZeroBand<Int>()
+        val a = 7
+        val b = 42
+        val c = 99
+
+        // Act
+        val result = target.combine(a, b, c)
+
+        // Assert
+        assertEquals(c, result)
+    }
 }

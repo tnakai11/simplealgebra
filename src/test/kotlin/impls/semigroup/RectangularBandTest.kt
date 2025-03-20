@@ -68,4 +68,20 @@ class RectangularBandTest {
         val expected = a.first to c.second
         assertEquals(expected, result)
     }
+
+    @Test
+    fun multipleCombine2() {
+        // Arrange
+        val target = RectangularBand<Int, Int>()
+        val a = 7 to 200
+        val b = 42 to 500
+        val c = 99 to 100
+
+        // Act
+        val result = target.combine(a, b, c)
+
+        // Assert
+        val expected = a.first to c.second
+        assertEquals(expected, result)
+    }
 }

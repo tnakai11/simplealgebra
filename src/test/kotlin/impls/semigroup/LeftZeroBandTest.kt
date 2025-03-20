@@ -64,4 +64,19 @@ class LeftZeroBandTest {
         // Assert
         assertEquals(a, result)
     }
+
+    @Test
+    fun multipleCombine2() {
+        // Arrange
+        val target = LeftZeroBand<Int>()
+        val a = 7
+        val b = 42
+        val c = 99
+
+        // Act
+        val result = target.combine(a, b, c)
+
+        // Assert
+        assertEquals(a, result)
+    }
 }
