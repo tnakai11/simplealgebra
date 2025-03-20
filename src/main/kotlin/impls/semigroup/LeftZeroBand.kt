@@ -19,13 +19,6 @@ import interfaces.Semigroup
  * @param T the type of the elements that this Semigroup operates on
  */
 class LeftZeroBand<T> : Semigroup<T> {
-    /**
-     * Combines two elements of type T, always returning the first (left) operand.
-     *
-     * @param a the first element
-     * @param b the second element
-     * @return the first element `a`
-     */
     override fun combine(a: T, b: T): T {
         return a
     }

@@ -19,13 +19,6 @@ import interfaces.Semigroup
  * @param T the type of the elements that this Semigroup operates on
  */
 class RightZeroBand<T> : Semigroup<T> {
-    /**
-     * Combines two elements of type T, always returning the second (right) operand.
-     *
-     * @param a the first element
-     * @param b the second element
-     * @return the second element `b`
-     */
     override fun combine(a: T, b: T): T {
         return b
     }
