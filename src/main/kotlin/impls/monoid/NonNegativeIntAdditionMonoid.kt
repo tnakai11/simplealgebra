@@ -3,15 +3,19 @@ package impls.monoid
 import interfaces.Monoid
 
 /**
- * A specific implementation of the Monoid interface for integers, utilizing addition as the
- * binary operation and zero as the identity element.
+ * A specific implementation of the Monoid interface for non-negative integers,
+ * using addition as the binary operation and zero as the identity element.
  *
  * This class adheres to the Monoid laws:
  * 1. Associativity: The addition operation is associative.
  *    combine(combine(a, b), c) == combine(a, combine(b, c))
- * 2. Identity element: Zero acts as the identity element, meaning:
+ * 2. Identity element: Zero serves as the identity element, meaning:
  *    combine(a, identity()) == a
  *    combine(identity(), a) == a
+ *
+ * Additionally, this implementation enforces the constraint that all input values
+ * to the `combine` method must be non-negative integers. Any attempt to combine
+ * negative integers will result in an exception being thrown.
  */
 class NonNegativeIntAdditionMonoid : Monoid<Int> {
     override fun identity(): Int = 0
