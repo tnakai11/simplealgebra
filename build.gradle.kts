@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation(kotlin("test"))  // Kotlin Test library
+    testImplementation(kotlin("test")) // Kotlin Test library
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.3") // JUnit 5
 }
 

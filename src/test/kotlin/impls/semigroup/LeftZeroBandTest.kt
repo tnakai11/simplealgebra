@@ -7,7 +7,6 @@ import kotlin.test.assertEquals
  * A test class for [LeftZeroBand].
  */
 class LeftZeroBandTest {
-
     @Test
     fun integer() {
         // Arrange

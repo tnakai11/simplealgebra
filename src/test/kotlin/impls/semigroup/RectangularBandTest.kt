@@ -7,7 +7,6 @@ import kotlin.test.assertEquals
  * A test class for [RectangularBandTest].
  */
 class RectangularBandTest {
-
     @Test
     fun integer() {
         // Arrange

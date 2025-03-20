@@ -22,7 +22,10 @@ import interfaces.Semigroup
  * @param U the type of the second element in the pair
  */
 class RectangularBand<T, U> : Semigroup<Pair<T, U>> {
-    override fun combine(a: Pair<T, U>, b: Pair<T, U>): Pair<T, U> {
+    override fun combine(
+        a: Pair<T, U>,
+        b: Pair<T, U>,
+    ): Pair<T, U> {
         val first = LeftZeroBand<T>().combine(a.first, b.first)
         val second = RightZeroBand<U>().combine(a.second, b.second)
         return first to second

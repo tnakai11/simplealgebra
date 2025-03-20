@@ -19,11 +19,10 @@ import interfaces.Semigroup
  * @param T the type of the elements that this Semigroup operates on
  */
 class RightZeroBand<T> : Semigroup<T> {
-    override fun combine(a: T, b: T): T {
-        return b
-    }
+    override fun combine(
+        a: T,
+        b: T,
+    ): T = b
 
-    override fun combine(vararg elements: T): T {
-        return elements.last()
-    }
+    override fun combine(vararg elements: T): T = elements.last()
 }

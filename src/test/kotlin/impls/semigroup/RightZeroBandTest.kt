@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test
  * A test class for [RightZeroBand].
  */
 class RightZeroBandTest {
-
     @Test
     fun integer() {
         // Arrange

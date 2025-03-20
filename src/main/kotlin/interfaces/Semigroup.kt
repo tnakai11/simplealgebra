@@ -17,7 +17,10 @@ interface Semigroup<T> {
      * @param b the second element to combine
      * @return the result of combining the two elements
      */
-    fun combine(a: T, b: T): T
+    fun combine(
+        a: T,
+        b: T,
+    ): T
 
     /**
      * Combines a variable number of elements of type T into a single element
