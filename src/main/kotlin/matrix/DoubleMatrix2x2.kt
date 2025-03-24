@@ -29,6 +29,20 @@ data class DoubleMatrix2x2(
         )
 
     /**
+     * Subtracts another matrix from this matrix.
+     *
+     * @param other the matrix to subtract from this matrix
+     * @return the result of the subtraction
+     */
+    fun subtract(other: DoubleMatrix2x2): DoubleMatrix2x2 =
+        DoubleMatrix2x2(
+            a11 - other.a11,
+            a12 - other.a12,
+            a21 - other.a21,
+            a22 - other.a22,
+        )
+
+    /**
      * Multiplies this matrix by another matrix.
      *
      * @param other the matrix to multiply with this matrix
@@ -79,6 +93,18 @@ data class DoubleMatrix2x2(
             -a21 / det,
             a11 / det,
         )
+    }
+
+    /**
+     * Computes the Lie bracket [A, B] = AB - BA of this matrix with another matrix.
+     *
+     * @param other the matrix to compute the Lie bracket with
+     * @return the result of the Lie bracket
+     */
+    fun lieBracket(other: DoubleMatrix2x2): DoubleMatrix2x2 {
+        val ab = this.multiply(other)
+        val ba = other.multiply(this)
+        return ab.subtract(ba)
     }
 
     /**
